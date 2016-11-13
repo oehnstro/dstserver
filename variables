@@ -1,0 +1,4 @@
+export STEAMCMD_DIR="~/steamcmd"
+export INSTALL_DIR="~/dontstarvetogether_dedicated_server"
+export CLUSTER_NAME="MyDediServer"
+export DONTSTARVE_DIR="~/.klei/DoNotStarveTogether"
