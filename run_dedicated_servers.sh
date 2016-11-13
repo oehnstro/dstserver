@@ -23,11 +23,11 @@ check_for_file "$DONTSTARVE_DIR/$CLUSTER_NAME/cluster_token.txt"
 check_for_file "$DONTSTARVE_DIR/$CLUSTER_NAME/Master/server.ini"
 check_for_file "$DONTSTARVE_DIR/$CLUSTER_NAME/Caves/server.ini"
 
-./steamcmd.sh +force_install_dir "$install_dir" +login anonymous +app_update 343050 +quit
+./steamcmd.sh +force_install_dir "$INSTALL_DIR" +login anonymous +app_update 343050 +quit
 
-check_for_file "$install_dir/bin"
+check_for_file "$INSTALL_DIR/bin"
 
-cd "$install_dir/bin" || fail 
+cd "$INSTALL_DIR/bin" || fail 
 
 run_shared=(./dontstarve_dedicated_server_nullrenderer)
 run_shared+=(-cluster "$CLUSTER_NAME")
