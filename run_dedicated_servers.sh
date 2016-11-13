@@ -15,13 +15,13 @@ function check_for_file()
     fi
 }
 
-cd "$steamcmd_dir" || fail "Missing $steamcmd_dir directory!"
+cd "$STEAMCMD_DIR" || fail "Missing $STEAMCMD_DIR directory!"
 
 check_for_file "steamcmd.sh"
-check_for_file "$dontstarve_dir/$cluster_name/cluster.ini"
-check_for_file "$dontstarve_dir/$cluster_name/cluster_token.txt"
-check_for_file "$dontstarve_dir/$cluster_name/Master/server.ini"
-check_for_file "$dontstarve_dir/$cluster_name/Caves/server.ini"
+check_for_file "$DONTSTARVE_DIR/$CLUSTER_NAME/cluster.ini"
+check_for_file "$DONTSTARVE_DIR/$CLUSTER_NAME/cluster_token.txt"
+check_for_file "$DONTSTARVE_DIR/$CLUSTER_NAME/Master/server.ini"
+check_for_file "$DONTSTARVE_DIR/$CLUSTER_NAME/Caves/server.ini"
 
 ./steamcmd.sh +force_install_dir "$install_dir" +login anonymous +app_update 343050 +quit
 
@@ -30,7 +30,7 @@ check_for_file "$install_dir/bin"
 cd "$install_dir/bin" || fail 
 
 run_shared=(./dontstarve_dedicated_server_nullrenderer)
-run_shared+=(-cluster "$cluster_name")
+run_shared+=(-cluster "$CLUSTER_NAME")
 run_shared+=(-monitor_parent_process $$)
 
 "${run_shared[@]}" -shard Caves  | sed 's/^/Caves:  /' &
