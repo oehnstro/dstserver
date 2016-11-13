@@ -2,6 +2,11 @@
 
 source variables
 
+echo "STEAMCMD_DIR: $STEAMCMD_DIR"
+echo "INSTALL_DIR: $INSTALL_DIR"
+echo "CLUSTER_NAME: $CLUSTER_NAME"
+echo "DONTSTARVE_DIR: $DONTSTARVE_DIR"
+
 echo "Installing dependencies"
 
 sudo dpkg --add-architecture i386
@@ -41,5 +46,5 @@ cp modoverrides.lua "$DONTSTARVE_DIR/$CLUSTER_NAME/Master/modoverrides.lua"
 
 echo "Finished"
 
-echo "Paste server token into: ~/.klei/DoNotStarveTogether/MyDediServer/cluster_token.txt"
+echo "Paste server token into: $DONTSTARVE_DIR/$CLUSTER_NAME/cluster_token.txt"
 
